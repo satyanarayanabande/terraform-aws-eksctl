@@ -1,0 +1,14 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eks-spot-cluster
+  region: ap-south-1
+
+manageNodeGroups:
+  - name: spot
+    instanceType: m5.large
+    desiredCapacity: 3
+    volumeSize: 80
+    ssh:
+      publicKeyName: kubernetes
